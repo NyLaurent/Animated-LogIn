@@ -1,0 +1,199 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-sizing: border-box;
+
+}
+body{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background: #fff;
+    
+
+
+}
+.box{
+    position: relative;
+    width: 380px;
+    height: 420px;
+    background:lightblue;
+    border-radius: 8px;
+    overflow: hidden;
+    
+
+}
+.box::before{
+    content: '';
+    position: absolute;
+    top: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg ,transparent,transparent,lightpink,lightpink,lightpink);
+    z-index: 1;
+    transform-origin: bottom right;
+    animation:  animate 6s linear infinite;
+
+}
+.box::after{
+    content: '';
+    position: absolute;
+    top: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg ,transparent,transparent,lightpink,lightpink,lightpink);
+    z-index: 1;
+    transform-origin: bottom right;
+    animation:  animate 6s linear infinite;
+    animation-delay: -3s;
+
+}
+.borderline{
+    position: absolute;
+    top: 0;
+    inset: 0;
+
+}
+.borderline::before{
+    content: '';
+    position: absolute;
+    top: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg ,transparent,transparent,red,red,red);
+    z-index: 1;
+    transform-origin: bottom right;
+    animation:  animate 6s linear infinite;
+    animation-delay: -1.5s;
+
+
+}
+.borderline::after{
+    content: '';
+    position: absolute;
+    top: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg ,transparent,transparent,rgb(173, 130, 130),rgb(152, 119, 119),rgb(164, 141, 141));
+    z-index: 1;
+    transform-origin: bottom right;
+    animation:  animate 6s linear infinite;
+    animation-delay: -4.5s;
+
+
+}
+@keyframes animate{
+    0%{
+        transform: rotate(0deg);
+        
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.box form{
+    position: absolute;
+    inset: 5px;
+    background: #fff;
+    padding: 50px 40px;
+    border-radius: 8px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+}
+.box form h1{
+    color: lightblue;
+    font-weight: 200;
+    text-align: center;
+    letter-spacing: 0.1em;
+}
+.box form .inputbox{
+    position: relative;
+    width: 300px;
+    margin-top: 35px;
+}
+.box form .inputbox input{
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background: transparent;
+    outline: none;
+    box-shadow: none;
+    color: lightcoral  ;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    z-index: 10;
+    border: transparent;
+}
+.box form .inputbox span{
+    position: absolute;
+    left: 0;
+    padding-left: 20px 10px 10px;
+    pointer-events: none;
+    color: lightskyblue;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+}
+.box form .inputbox input:valid ~span,
+.box form .inputbox input:focus ~span
+{
+    color: lightblue;
+    transform: translateY(-34px);
+    font-size: 0.75em;
+}
+.box form .inputbox i{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background:lightblue;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: 0.5s;
+    pointer-events: none;
+
+}
+.box form .inputbox input:valid ~i,
+.box form .inputbox input:focus ~i{
+    height: 40px ;
+    
+}
+.box form .links{
+    display: flex;
+    justify-content: space-between;
+
+}
+.box form a{
+    margin:10px 0 ;
+    font-size: 0.75em;
+    color: lightblue;
+    text-decoration: none;
+}
+.box form a:hover
+.box form a:nth-child(2){
+    color: lightpink;
+}
+.box form input[type='submit']{
+    border: none;
+    outline: none;
+    padding: 9px 25px;
+    background: lightblue;
+    cursor: pointer;
+    font-size: 0.9em;
+    border-radius: 4px;
+    font-weight: 600;
+    width: 100px;
+    margin-top: 10px;
+
+
+}
+.box form input[type='submit']:active{
+    opacity:0.8;
+}
